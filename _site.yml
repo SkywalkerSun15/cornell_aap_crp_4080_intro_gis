@@ -1,0 +1,17 @@
+name: "crp 4080 website"
+navbar:
+  title: "CRP4080: Introduction to GIS"
+  left:
+    - text: "Homepage"
+      href: index.html
+    - text: "Syllabus"
+      href: syllabus.html
+    - text: "Labs"
+      href: labs.html
+output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    highlight: textmate
+    toc: true 
+    toc_float: true 

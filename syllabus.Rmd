@@ -11,7 +11,17 @@ output:
 
 > NTRES 6100   
 Collaborative and Reproducible Data Science in R  
-Cornell University, Spring 2022  
+Cornell University, Spring 2022 
+
+## Quarterly Results {.tabset .tabset-fade}
+
+### By Product
+
+(tab content)
+
+### By Region
+
+(tab content)
 
 #### Course Info  
 

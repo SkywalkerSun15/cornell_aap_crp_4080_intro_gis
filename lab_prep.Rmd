@@ -6,10 +6,10 @@ output:
 ---
   
 ```{r setup, include=FALSE}
-knitr::opts_knit$set(base.dir = "./labs/", root.dir = "./labs/")
+knitr::opts_knit$set(base.dir = ".", root.dir = ".")
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
-<br>
+---
 
 ## Goals for this lab
 
@@ -20,8 +20,7 @@ There are mainly two goals for this lab.
 1. Some rules and recommendations to follow when you work on the lab;
 2. Preparing and installing ArcGIS Pro. 
 
-<br>
-<br>
+---
 
 ## Lab Management
 
@@ -33,8 +32,8 @@ There are two rules when you work on the lab within this course.
 
 1. From now on, please copy the data from the course folder to your own folder at the beginning of each lab.
 2. Assignments should be submitted as a single document, saved as this: netid_firstname_lab_1, to the __*Assignments*__ link on Canvas. From now on, all labs should be submitted in the same fashion. 
-<br>
-<br>
+
+---
 
 ## Accessing ArcGIS Pro
 

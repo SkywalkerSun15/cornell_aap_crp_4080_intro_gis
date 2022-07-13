@@ -11,7 +11,7 @@
 
 
 
-<title>Lab Preparation</title>
+<title>Lab 1: Get Familiar with ArcGIS Pro</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -338,99 +338,143 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Lab Preparation</h1>
+<h1 class="title toc-ignore">Lab 1: Get Familiar with ArcGIS Pro</h1>
 
 </div>
 
 
+<hr />
+<p><strong>Due Date:</strong></p>
+<p><strong>Instructor: Xiaozhong Sun (<a href="mailto:xs243@cornell.edu"
+class="email">xs243@cornell.edu</a>)</strong></p>
+<p><strong>Lab TAs:</strong></p>
+<p><strong>Location: Sibley 305, Barclay Gibbs Jones Computer
+Lab</strong></p>
+<p><strong>Total Points:</strong></p>
 <hr />
 <div id="goals-for-this-lab" class="section level2">
 <h2>Goals for this lab</h2>
-<p><strong>Please go through this lab before lab_1.</strong></p>
-<p>There are mainly two goals for this lab.</p>
-<ol style="list-style-type: decimal">
-<li>Some rules and recommendations to follow when you work on the
-lab;</li>
-<li>Preparing and installing ArcGIS Pro.</li>
-</ol>
+<p>If you’ve never used ArcGIS, today’s lab session will take you to
+familiarize yourself with it. People’s learning curve for new software
+can vary from person to person. But most people tend to feel more or
+less frustrated when new to the software, and I am no exception. What
+I’m trying to say is that there’s probably no quick way to learn it. All
+you can do is use it as much as possible, get familiar with it, and
+don’t worry if you find yourself starting slow. We’ll have a semester to
+do that.</p>
+<p>In today’s lab session, you will 1) learn the basic functions and
+windows layout (layers/panes) of ArcGIS Pro; 2) you will start to make a
+map. By the end of this lab session, you should be able to
+<strong><em>create folders/projects, add data, create a unique layer
+map, put together a map layout, use some of the primary analysis tools
+in Arc Pro, and save your project</em></strong>.</p>
 <hr />
 </div>
-<div id="lab-management" class="section level2">
-<h2>Lab Management</h2>
-<p>Data and folder management are always crucial when you work
-digitally. There are a lot of good practices you can search online.
-However, most importantly, <strong>you have to have your habit
-formed</strong>. There are some general rules for this course when you
-submit your homework. Other than that, you have to do your job to keep
-your course folder, especially your lab folder, organized so that you
-will be able to communicate with yourself or other people in the future
-who might access or review the work you have done in the past. Since
-ArcGIS is commercial software that does not support traceable version
-control. It is painful to keep track of your files.</p>
-<p>Check out this <a
-href="https://www.abdn.ac.uk/staffnet/documents/policy-zone-information-policies/UoA_Version%20Control_July%202017.pdf">document</a>
-here for some best practices. Take the time to set up a system you can
-build upon will benefit you in the future! Also, <strong>don’t forget to
-back up your file</strong>. Take advantage of using Cornell Box.</p>
-<p>There are two rules when you work on the lab within this course.</p>
-<ol style="list-style-type: decimal">
-<li>From now on, please copy the data from the course folder to your own
-folder at the beginning of each lab.</li>
-<li>Assignments should be submitted as a single document, saved as this:
-netid_firstname_lab_1, to the <strong><em>Assignments</em></strong> link
-on Canvas. From now on, all labs should be submitted in the same
-fashion.</li>
-</ol>
+<div id="know-your-data" class="section level2">
+<h2>Know your data</h2>
+<p>Take a look at your lab data. We don’t have too many data stored
+locally for our lab 1. Currently there are only six files with the same
+name, which represent polling places for Tompkins County (we will be
+adding more data later during this lab). Look at how the files are
+listed and organized. This is normally the file format supported by
+software such as ArcGIS and QGIS. This one layer of data is comprised of
+a number of files: a .shp file (shape file) and other support files:
+.sbn, .sbx, .shx, .prj (this one defines the projection) and .dbf (the
+last one contains the attribute information).<strong>[Hint: google these
+files’ suffix and get to know what they are. Google is always a good
+place to start when you stack or curious!!]</strong></p>
 <hr />
 </div>
-<div id="accessing-arcgis-pro" class="section level2">
-<h2>Accessing ArcGIS Pro</h2>
-<p>If you do not have an ArcGIS Pro account you will need to request one
-through the general help of our <a
-href="https://discord.gg/cRkSXt7SYR">Discord server</a> or through
-sending an email to <em><a href="mailto:aap-it@cornell.edu"
-class="email">aap-it@cornell.edu</a></em>.</p>
-<p>You can access ArcGIS Pro in four different ways:</p>
-<ul>
-<li><p>You can always access to ArcGIS on the lab computers or other
-library computers. You can also borrow laptops from library and they
-usually have ArcGIS pre-installed.</p></li>
-<li><p>Cornell’s Apps on Demand, i.e., self-register for this AAP
-Software Access course and follow <a
-href="https://canvas.cornell.edu/enroll/MTFA4D">instructions</a>. More
-instructions on Apps on Demand can be found <a
-href="https://it.cornell.edu/appsondemand/tips-getting-started-apps-demand">here</a>.</p></li>
-<li><p>AAP Render/Software server (p.s., only use render 2, and please
-connect to Cornell VPN if you are outside campus network). More
-instructions from AAP IT: <a
-href="https://share.aap.cornell.edu/webpickup/RD_Server_FA_2019.pdf"
-class="uri">https://share.aap.cornell.edu/webpickup/RD_Server_FA_2019.pdf</a>.
-Instructions on how to connect to Cornell VPN: <a
-href="https://it.cornell.edu/cuvpn"
-class="uri">https://it.cornell.edu/cuvpn</a>.</p></li>
-<li><p>Download and install it on your own Windows-based computer (not
-compatible with Macs). Instructions are below:</p>
-<ol style="list-style-type: decimal">
-<li>Download ArcGIS Pro 2.4 from here (<em>You can always update it
-later</em>): <a
-href="https://drive.google.com/file/d/1EgvHt6m1dXc2RVpnDi1mZhu2Eto0GUg8/view?usp=sharing"
-class="uri">https://drive.google.com/file/d/1EgvHt6m1dXc2RVpnDi1mZhu2Eto0GUg8/view?usp=sharing</a></li>
-<li>Install it.</li>
-<li>After the install, launch ArcGIS pro and it will ask you to sign in
-(on the top left corner). <strong>Please choose the option for “Your
-ArcGIS organization’s URL” and type in “cugis” into the empty field so
-that in total it reads cugis.maps.arcgis.com.</strong></li>
-<li>Click Continue and follow the prompts to login with your CORNELL
-NETID LOGIN</li>
-<li>ArcGIS Pro should continue to launch with a successful netid
-login.</li>
-<li>If fail to login, but you are sure you have activated your CUGIS
-link, click on Settings, and manually set CUGIS portal as <a
-href="https://cugis.maps.arcgis.com/"
-class="uri">https://cugis.maps.arcgis.com/</a>, and set this as active
-portal, and login again with CU netID and passwords</li>
-</ol></li>
-</ul>
+<div id="create-a-project" class="section level2">
+<h2>Create a project</h2>
+<p>You will notice that you have the option of opening a recent project
+or template. As we have not created a project, on the opening page,
+please click on the <strong>Map</strong> option under <strong>Blank
+Templates</strong>.</p>
+<p>The <strong>Create a new project</strong> dialog box opens. Give your
+project a name (e.g., “Lab 1”), and navigate to your lab_1 folder.
+Uncheck the <strong>‘Create a new folder for this project’</strong> box
+and click OK.</p>
+<p>Above the map view is the <strong>ribbon (where magic
+happens)</strong>. The ribbon has a set of core tabs: <strong>Map,
+Insert, Analysis, View, Edit, Imagery, and Share</strong> that are
+always present when a map view is active. Each tab has its own set of
+tools, organized in groups. The <strong>Map</strong> tab has tools for
+interacting with the map. On the <strong>Map</strong> tab, the
+<strong>Explore</strong> tool is located in the Navigate group.</p>
+<p><left><img src="figures/project_ribbon.png" width="200"></left></p>
+<p>For example, the <strong>Explore</strong> tool allows you to move
+around the map and to read information about map features of interest.
+Under the Map tab, the Navigate tool bar has a number of tools you
+should familiarize yourself with, The Full extent tool allows you to
+zoom out to the full extent of the dataset (the blue arrow below it
+brings you back to your previous extent. allow you to zoom in and
+out.</p>
+<p>Hover over the Explore tool . A pop-up image shows the mouse button
+navigation functions and some common keyboard shortcuts. Hover over the
+map and move the mouse pointer. The latitude-longitude coordinates of
+the mouse pointer’s location are displayed at the bottom of the map
+view. Use the mouse wheel to zoom in and out.</p>
+<p>In addition, you may see a Contents pane, a Catalog pane, or both.
+Panes are additional windows that ArcGIS help you manage views and
+projects. They are basically separate interfaces offer you access to
+specific functionality of the software.</p>
+<p>They are very important and sometimes need to be kept open all the
+time. Panes in ArcGIS are very flexible, you can open, close, move, dock
+and hide them based on your preferences. You can always play around them
+yourself.</p>
+<p><left><img src="figures/content_catalog_pane.png" width="200"></left></p>
+<p>When you accidentally close them, you can go to <strong>View</strong>
+-&gt; <strong>Windows</strong> and you can turn on the them again.
+Noticing there are more panes to come, we will get to know them later in
+our course!!</p>
+<p>As you work, you’ll often open and close panes that you need for
+specific tasks. You may also want to re-position panes or minimize them
+to make room for maps and other views. On the ribbon, click the
+<strong>View</strong> tab. In the <strong>Windows</strong> group, click
+<strong>Reset Panes</strong> and click <strong>Reset Panes for Mapping
+(Default)</strong>. And voilà, they will be back to default look.</p>
+<p>The two panes can be docked on either sides of the ArcGIS Pro window.
+They can also stacked on top of the other. If the panes are stacked,
+they have tabs at the bottom that allow you to switch from one pane to
+the other. You can also autohide a pane by clicking the
+<left><img src="figures/pin.png" width="25"></left>on the top-right
+corner so it doesn’t take up space when you aren’t using it.</p>
+<p>The <strong>Contents</strong> pane lists items in the active view,
+such as layers in a map or layout elements in a layout. The
+<strong>Catalog</strong> pane lists items that belong to the project,
+such as databases, toolboxes, and folder connections. The
+<strong>Catalog</strong> pane also provides access to portal items, such
+as web layers.</p>
+<hr />
+</div>
+<div id="add-a-basemap" class="section level2">
+<h2>Add a basemap</h2>
+<p>You noticed that a Topographic layer was automatically added when you
+opened the project. If it doesn’t match your taste or is too cluttered,
+you can adjust the base map.</p>
+<p>ArcGIS Pro provides different Basemaps in addition to the default
+World Topographic Map.</p>
+<p>Go to Map ribbon, under Layer tab, click Basemap. In the Add Basemap
+dialogue box, you have a number of options. Select one you
+preferred.</p>
+<p>Under the Map tab, use the Locate tool to find Ithaca, NY.</p>
+<hr />
+</div>
+<div id="add-data" class="section level2">
+<h2>Add data</h2>
+<hr />
+</div>
+<div id="save-project" class="section level2">
+<h2>Save project</h2>
+<hr />
+</div>
+<div id="create-a-map-layout" class="section level2">
+<h2>Create a map layout</h2>
+<hr />
+</div>
+<div id="now-its-your-turn" class="section level2">
+<h2>Now it’s your turn!</h2>
 <p><br> <br></p>
 <p><strong>The END</strong></p>
 </div>

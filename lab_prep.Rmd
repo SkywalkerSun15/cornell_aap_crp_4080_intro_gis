@@ -1,0 +1,63 @@
+---
+title: "Lab Preparation"
+output: 
+  html_document:
+    toc: true
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_knit$set(base.dir = "./labs/", root.dir = "./labs/")
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+<br>
+
+## Goals for this lab
+
+**Please go through this lab before lab_1.**
+
+There are mainly two goals for this lab. 
+
+1. Some rules and recommendations to follow when you work on the lab;
+2. Preparing and installing ArcGIS Pro. 
+
+<br>
+<br>
+
+## Lab Management
+
+Data and folder management are always crucial when you work digitally. There are a lot of good practices you can search online. However, most importantly, **you have to have your habit formed**. There are some general rules for this course when you submit your homework. Other than that, you have to do your job to keep your course folder, especially your lab folder, organized so that you will be able to communicate with yourself or other people in the future who might access or review the work you have done in the past. Since ArcGIS is commercial software that does not support traceable version control. It is painful to keep track of your files.
+
+Check out this [document](https://www.abdn.ac.uk/staffnet/documents/policy-zone-information-policies/UoA_Version%20Control_July%202017.pdf) here for some best practices. Take the time to set up a system you can build upon will benefit you in the future! Also, **don’t forget to back up your file**. Take advantage of using Cornell Box.
+
+There are two rules when you work on the lab within this course.
+
+1. From now on, please copy the data from the course folder to your own folder at the beginning of each lab.
+2. Assignments should be submitted as a single document, saved as this: netid_firstname_lab_1, to the __*Assignments*__ link on Canvas. From now on, all labs should be submitted in the same fashion. 
+<br>
+<br>
+
+## Accessing ArcGIS Pro
+
+If you do not have an ArcGIS Pro account you will need to request one through the general help of our [Discord server](https://discord.gg/cRkSXt7SYR) or through sending an email to *aap-it@cornell.edu*.
+
+You can access ArcGIS Pro in four different ways:
+
+* You can always access to ArcGIS on the lab computers or other library computers. You can also borrow laptops from library and they usually have ArcGIS pre-installed.
+
+* Cornell's Apps on Demand, i.e., self-register for this AAP Software Access course and follow [instructions](https://canvas.cornell.edu/enroll/MTFA4D). More instructions on Apps on Demand can be found [here](https://it.cornell.edu/appsondemand/tips-getting-started-apps-demand).
+
+* AAP Render/Software server (p.s., only use render 2, and please connect to Cornell VPN if you are outside campus network). More instructions from AAP IT: https://share.aap.cornell.edu/webpickup/RD_Server_FA_2019.pdf. Instructions on how to connect to Cornell VPN: https://it.cornell.edu/cuvpn.
+
+* Download and install it on your own Windows-based computer (not compatible with Macs). Instructions are below:
+
+  1.	Download ArcGIS Pro 2.4 from here (*You can always update it later*): https://drive.google.com/file/d/1EgvHt6m1dXc2RVpnDi1mZhu2Eto0GUg8/view?usp=sharing 
+  2.	Install it.
+  3.	After the install, launch ArcGIS pro and it will ask you to sign in (on the top left corner). **Please choose the option for "Your ArcGIS organization's URL" and type in “cugis” into the empty field so that in total it reads cugis.maps.arcgis.com.**
+  4.	Click Continue and follow the prompts to login with your CORNELL NETID LOGIN
+  5.	ArcGIS Pro should continue to launch with a successful netid login.
+  6.	If fail to login, but you are sure you have activated your CUGIS link, click on Settings, and manually set CUGIS portal as https://cugis.maps.arcgis.com/, and set this as active portal, and login again with CU netID and passwords
+
+<br>
+<br>
+
+**The END**

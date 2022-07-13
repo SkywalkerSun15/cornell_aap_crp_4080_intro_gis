@@ -1,0 +1,7 @@
+Temp used websites:
+https://www.admitnetwork.org/work-packages/gis-gps/
+https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+https://www.mosaic51.com/technology/free-gis-software-for-visualizing-mobile-mapping-data/
+https://jules32.github.io/rmarkdown-website-tutorial/basic_workflow.html
+https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet#lists
+https://nt246.github.io/NTRES-6100-data-science/syllabus.html#Prerequisites

@@ -355,19 +355,27 @@ Lab</strong></p>
 <div id="goals-for-this-lab" class="section level2">
 <h2>Goals for this lab</h2>
 <p>If you’ve never used ArcGIS, today’s lab session will take you to
-familiarize yourself with it. People’s learning curve for new software
-can vary from person to person. But most people tend to feel more or
-less frustrated when new to the software, and I am no exception. What
-I’m trying to say is that there’s probably no quick way to learn it. All
-you can do is use it as much as possible, get familiar with it, and
-don’t worry if you find yourself starting slow. We’ll have a semester to
-do that.</p>
+familiarize yourself with it. The latest ArcGIS Pro has a very similar
+interface to software of Microsoft Office. They all have
+<strong>ribbon-based</strong> interfaces.</p>
+<p>People’s learning curve for new software can vary from person to
+person. But most people tend to feel more or less frustrated when new to
+the software, and I am no exception. What I’m trying to say is that
+there’s probably no quick way to learn it. All you can do is use it as
+much as possible, get familiar with it, and don’t worry if you find
+yourself starting slow. We’ll have a semester to do that.</p>
 <p>In today’s lab session, you will 1) learn the basic functions and
 windows layout (layers/panes) of ArcGIS Pro; 2) you will start to make a
-map. By the end of this lab session, you should be able to
-<strong><em>create folders/projects, add data, create a unique layer
-map, put together a map layout, use some of the primary analysis tools
-in Arc Pro, and save your project</em></strong>.</p>
+map. By the end of this lab session, you should be able to</p>
+<ol style="list-style-type: decimal">
+<li><strong>create folders/projects;</strong></li>
+<li><strong>add data;</strong></li>
+<li><strong>create a unique layer map;</strong></li>
+<li><strong>put together a map layout;</strong></li>
+<li><strong>use some of the primary analysis tools in Arc
+Pro;</strong></li>
+<li><strong>and save your project.</strong></li>
+</ol>
 <hr />
 </div>
 <div id="know-your-data" class="section level2">
@@ -395,26 +403,61 @@ Templates</strong>.</p>
 project a name (e.g., “Lab 1”), and navigate to your lab_1 folder.
 Uncheck the <strong>‘Create a new folder for this project’</strong> box
 and click OK.</p>
+<hr />
+</div>
+<div id="save-your-project" class="section level2">
+<h2>Save your project</h2>
+<p>Know how to save your project is a good habit to get into early.
+Under the <strong>Project</strong> tab, you can save your project.
+ArcGIS Pro uses *.aprx as its default project file type. Remember to
+save your project along the way!!!</p>
+<p>ArcGIS Pro adopts project-based workflow like other development
+software. A <a
+href="https://pro.arcgis.com/en/pro-app/2.8/help/projects/what-is-a-project.htm"><strong>Project</strong></a>
+in ArcGIS is a set of ArcGIS geographic and database files that have
+been saved in a certain organized form. It is a pointer to the locations
+of the actual files – it contains no real data, only file mapping
+information! You are not re-saving and changing any of the data in the
+map. This means if you move your data from one place to another, your
+project will lost its connection! If you were to copy the project file,
+you would merely be copying the “pointers”, NOT the actual data.</p>
+<p>Therefore, it is important for you, from now on, to save all relevant
+data from the course folder to a (well labeled) folder you have created
+on your drive or cloud. Most importantly, create and save your project
+file within that same folder.</p>
+<p>If you edit or change any data file (for example: changed the name of
+the data in folder or moved them to other directories) related to a
+exiting project, once you reopen that project, the data you change might
+affect displaying the layers/data in maps. Your current project
+connection to the corresponding data is invalid. You have to rebuild the
+connection to restore the saved progress. See this detailed instruction
+on how to <a
+href="https://pro.arcgis.com/en/pro-app/2.8/help/projects/repair-project-items.htm"><strong>repair
+project items</strong></a>.</p>
+<hr />
+</div>
+<div id="introduction-to-the-interface" class="section level2">
+<h2>Introduction to the interface</h2>
 <p>Above the map view is the <strong>ribbon (where magic
 happens)</strong>. The ribbon has a set of core tabs: <strong>Map,
 Insert, Analysis, View, Edit, Imagery, and Share</strong> that are
 always present when a map view is active. Each tab has its own set of
 tools, organized in groups. The <strong>Map</strong> tab has tools for
-interacting with the map. On the <strong>Map</strong> tab, the
-<strong>Explore</strong> tool is located in the Navigate group.</p>
+interacting with the map. For example, under the <strong>Map</strong>
+tab, the <strong>Explore</strong> tool is located in the Navigate
+group.</p>
 <p><left><img src="figures/project_ribbon.png" width="200"></left></p>
-<p>For example, the <strong>Explore</strong> tool allows you to move
+<p>Specifically, the <strong>Explore</strong> tool allows you to move
 around the map and to read information about map features of interest.
-Under the Map tab, the Navigate tool bar has a number of tools you
-should familiarize yourself with, The Full extent tool allows you to
-zoom out to the full extent of the dataset (the blue arrow below it
-brings you back to your previous extent. allow you to zoom in and
-out.</p>
-<p>Hover over the Explore tool . A pop-up image shows the mouse button
-navigation functions and some common keyboard shortcuts. Hover over the
-map and move the mouse pointer. The latitude-longitude coordinates of
-the mouse pointer’s location are displayed at the bottom of the map
-view. Use the mouse wheel to zoom in and out.</p>
+You can familiarize yourself with these tools by simply hovering over
+these buttons. For example, <strong>The Full extent tool</strong> allows
+you to zoom out to the full extent of your dataset, <strong>the blue
+arrow</strong> below it brings you back to your previous extent.</p>
+<p>Instead of using ribbon button, under the <strong>Map</strong> view,
+you can also use your mouse to move around map view or gather
+information such as the latitude-longitude coordinates (the mouse
+pointer’s location are displayed at the bottom of the map view). You can
+also use the mouse wheel to zoom in and out.</p>
 <p>In addition, you may see a Contents pane, a Catalog pane, or both.
 Panes are additional windows that ArcGIS help you manage views and
 projects. They are basically separate interfaces offer you access to
@@ -448,35 +491,528 @@ such as databases, toolboxes, and folder connections. The
 as web layers.</p>
 <hr />
 </div>
-<div id="add-a-basemap" class="section level2">
-<h2>Add a basemap</h2>
+<div id="some-basic-tools-under-map-tab" class="section level2">
+<h2>Some basic tools under Map tab</h2>
+<p><br></p>
+<div id="add-basemap" class="section level3">
+<h3>Add basemap</h3>
 <p>You noticed that a Topographic layer was automatically added when you
 opened the project. If it doesn’t match your taste or is too cluttered,
-you can adjust the base map.</p>
-<p>ArcGIS Pro provides different Basemaps in addition to the default
-World Topographic Map.</p>
-<p>Go to Map ribbon, under Layer tab, click Basemap. In the Add Basemap
-dialogue box, you have a number of options. Select one you
-preferred.</p>
-<p>Under the Map tab, use the Locate tool to find Ithaca, NY.</p>
+you can either change or close the base map. ArcGIS Pro provides
+different Basemaps in addition to the default World Topographic Map.</p>
+<p>Simply go to <strong>Map</strong> tab, under <strong>Layer</strong>
+group, click <strong>Basemap</strong>. In the <strong>Add
+Basemap</strong> dialogue box, you have a number of options. Select one
+you preferred.</p>
+<p><left><img src="figures/basemap.png" width="200"></left></p>
+<p><br></p>
+</div>
+<div id="find-location" class="section level3">
+<h3>Find location</h3>
+<p>ArcGIS Pro allows you to locate a place within the basemap. It
+functions like a Google map. Simply under the <strong>Map</strong> tab,
+go to <strong>Inquiry</strong> group, use the <strong>Locate</strong>
+tool<left><img src="figures/locate.png" width="25"></left>and put in
+Ithaca, NY.</p>
+<p><br></p>
+</div>
+<div id="add-data" class="section level3">
+<h3><strong><em>Add data</em></strong></h3>
+<p>Adding data is an important step for our lab. There are two ways to
+add data in ArcGIS Pro: local data and online data. The new ArcGIS Pro
+is integrated with ArcGIS online, a cloud-based tool that users can
+upload datasets to, which makes it more powerful. You can search and add
+data that is uploaded and maintained by other users in the ArcGIS
+cloud.</p>
+<p>To add an ArcGIS online portal connection, complete the following
+steps:</p>
+<ol style="list-style-type: decimal">
+<li>Click the <strong>Project</strong> tab on the ribbon and click the
+<strong>Portals</strong> page. You can also access the
+<strong>Portals</strong> page from the <strong>Manage Portals</strong>
+link in the <strong>Sign In</strong> menu.</li>
+<li>Click <strong>Add Portal</strong>. Enter the URL for the portal on
+the <strong>Add Portal</strong> dialog box: <a
+href="https://cugis.maps.arcgis.com"
+class="uri">https://cugis.maps.arcgis.com</a> and click OK.</li>
+<li>Optionally sign in to the portal. Click the
+<strong>Options</strong><left><img src="figures/threedots.png" width="25"></left>
+button or right-click the <strong>portal</strong> and click Sign in.
+Enter your Cornell username and password.</li>
+<li>You can also sign in portal using <a
+href="https://pro.arcgis.com/en/pro-app/2.8/help/projects/sign-in-to-your-organization.htm#ESRI_SECTION1_1CAD4AEC94E54C1BA236F5CB2DC197D0">web
+browsers</a>.</li>
+</ol>
+<p>To make the new connection your active portal, right-click the URL
+and click <strong>Set As Active Portal</strong>. Now, you are ready to
+add data online. Back in the map: On the <strong>Map tab-Layer
+group</strong>, click <strong>Add Data</strong> and click
+<strong>Data</strong>. In the Add Data dialog box, select <strong>ArcGIS
+Online</strong>.</p>
+<p>Now let’s add a few data from <strong>ArcGIS Online</strong>. In the
+search ArcGIS Online box, lets search for</p>
+<ul>
+<li>Tompkins County parcel (Tompkins county tax parcels);</li>
+<li>TCBuildings (Tompkins county Building footprints);</li>
+<li>TcStreets (Tompkins county streets);</li>
+<li>TCMunis (Tompkins county municipal boundaries).</li>
+</ul>
+<p>The search allows for fuzzy matching, the name might not be exactly
+the same, but choose the one with the latest date. Also pay attention to
+the owner, data is more credible if it is provided by government
+agency.</p>
+<p>Now, let’s add the data from your <em>local drive</em>. Navigate to
+your drive under <strong>Project/Folders</strong> and add the data from
+your Lab_1 folder for - polling_places13 - polling locations</p>
 <hr />
 </div>
-<div id="add-data" class="section level2">
-<h2>Add data</h2>
+</div>
+<div id="basic-layersdata-editing" class="section level2">
+<h2>Basic layers/data editing</h2>
+<p><br></p>
+<div id="layers-display-on-the-contents-pane" class="section level3">
+<h3>Layers display on the <strong>Contents pane</strong></h3>
+<p><br></p>
+<div id="change-display-order" class="section level4">
+<h4>change display order</h4>
+<p>Note that the <strong>Contents pane</strong> includes several options
+of displaying layers: List by <strong>Drawing Order or Source</strong>
+etc. You are able to turn the various “layers” on and off, as well as
+rearrange the order in which they are presented by “clicking” and
+“dragging” the layers. When you drag layers, a black line appears just
+above the layer you are about to move. Move this line until you reach
+the new position for the layer and let go of the mouse button to drop
+the layer there.</p>
+<p><em>Now let’s rearrange the order of layers from the top to the
+bottom as polling_places13, TcStreets, TCBuildings, Parcels, and
+TCMunis.</em></p>
+<p><br></p>
+</div>
+<div id="rename-layers" class="section level4">
+<h4>rename layers</h4>
+<p>The current names are not particularly helpful. Let’s change layer
+name so they are understandable (note: sometimes you may have to open
+the attribute table and look for clues to determine what a more
+appropriate title should be).</p>
+<ul>
+<li>First, give our Map a name. In the Contents pane, right click on the
+Map and go to Map properties. Under the General tab, change the name to
+‘Ithaca’. Click OK. (Or simply left click it.)</li>
+<li>Right click on “TcStreets” layer and select
+<strong>Properties</strong>. In the Layer <strong>Properties</strong>
+dialog box, select the <strong>General</strong> tab.</li>
+<li>Under <strong>Name</strong> type “Tompkins County Roads” and hit
+OK.</li>
+<li>Change so the others read as follows (or whatever you like):
+<ul>
+<li>TCBuildings: Building footprints</li>
+<li>TCMunis: Municipal boundaries</li>
+<li>polling_places13: Polling locations</li>
+<li>TcStreets: Tompkins County roads</li>
+<li>taxparcelsrps: Tompkins County Tax Parcels</li>
+</ul></li>
+</ul>
+<p>Remember that you are not really changing the name of the original
+layer files, only the name displayed in ArcGIS Pro.</p>
+<p><br></p>
+</div>
+</div>
+<div id="the-attribute-table" class="section level3">
+<h3><strong>The attribute table</strong></h3>
+<p>By right clicking on our tax parchel layer in the
+<strong>Contents</strong> pane, you can access the attribute table
+(check other functions/shortcuts under the right clicking drop-down
+menu). A table view opens with the parcels layer attributes, which will
+contain the attribute information about this layer.</p>
+<p>The attribute table is a spread sheet file in which rows represent
+observations/cases and columns represent variables/attributes. Or to put
+it differently, the rows correspond to features (in this case polygons
+that correspond to parcels) and the columns correspond to the attributes
+of these spatial features. There is a one-to-one link between the
+features in the map and the rows in the table. This allows users to
+retrieve attribute information about any feature in the map. It also
+allows users to display one or more attributes for each geographic
+feature and easily create maps of particular attributes.</p>
+<p>The first column in the attribute table (FID) is a Feature ID, which
+assigns a unique number to each feature, starting from zero. The FID is
+assigned automatically by the GIS system and cannot be changed.</p>
+<p>The last column in the attribute table shows the type of feature (in
+this case polygons). Any given shapefile can only hold one type of
+feature (i.e. points, lines or polygons) and cannot combine different
+feature types.</p>
+<p>The other columns all contain various attribute information. Some of
+these are recognizable, while others are probably not, and will require
+an examination of the metadata to determine what they represent.</p>
+<p>Now, let’s do some statistics.</p>
+<p>Right click on the <strong>“Calcacres”</strong> column heading and go
+to <strong>Statistics.</strong> This will display a basic frequency
+distribution of parcel size. The output is not particularly helpful. Now
+let’s go back and right click on the layer of tax parcels and go to drop
+down menu of <strong>Create Chart/Create Bar chart</strong>. Under the
+<strong>properties</strong>, select <strong>PROPCLASS</strong> as the
+<strong>Category or Date</strong>, <strong>SUM</strong> as the
+<strong>Aggregation</strong>, and <strong>ACRES</strong> as the
+<strong>Numeric fields</strong>. Click “Apply.” This produces a more
+useful chart of acreage according to the property class. We could then
+export this chart as an image file using the <strong>Export</strong>
+button.</p>
+<p><left><img src="figures/statistics_attribute.png" width="250"></left></p>
 <hr />
 </div>
-<div id="save-project" class="section level2">
-<h2>Save project</h2>
+</div>
+<div id="basic-mapping" class="section level2">
+<h2>Basic Mapping</h2>
+<p><br></p>
+<div id="mapping-symbology-and-label" class="section level3">
+<h3>Mapping symbology and label</h3>
+<p><br></p>
+<div id="symbology" class="section level4">
+<h4>Symbology</h4>
+<p>Turn off all layer except for Municipal boundaries. Right click on
+Municipal boundaries layer and take a look at the attribute table. Note
+that while each municipality has a Name, these are often duplicate and
+contingent on the <strong>‘MUNITYPE’</strong> (City of Ithaca, Town of
+Ithaca, etc.). The attribute <strong>‘FULLNAME’</strong> will give us a
+unique name for each polygon.</p>
+<p>Close the table, right click again and click on
+<strong>Symbology</strong> which will open the
+<strong>Symbology</strong> panel. Let’s create a ‘unique values’ map
+using the attribute <strong>‘FULLNAME’</strong>. Under <strong>Primary
+symbology</strong>, go to unique values. For <strong>Field 1</strong>
+choose <strong>‘FULLNAME’</strong>, then click the <strong>add all
+values
+button</strong><left><img src="figures/adddata.png" width="20"></left>.
+ArcGIS assigns colors according to the <strong>Color scheme</strong>
+that is currently selected. If you click on the down arrow for
+<strong>Color scheme</strong>, you will find many other choices. Select
+one of your choices.</p>
+<p>If you want to edit a particular feature (for example a particular
+polygon), you can double-click on it. For example, you can double click
+on ‘City of Ithaca’ and change its color (Note that the symbol selector
+also includes pattern symbols in addition to solid colors).</p>
+<p><left><img src="figures/symbology.png" width="250"></left></p>
+<p><br></p>
+</div>
+<div id="adjusting-symbology" class="section level4">
+<h4>Adjusting Symbology</h4>
+<p>Let’s adjusting the symbology of other features. Right click on the
+Polling Locations, and select <strong>Symbology</strong>. Change the
+points to stars (note that you can adjust the color and size as
+well).</p>
+<p><left><img src="figures/polling_symbology.png" width="250"></left></p>
+<p>You will note that several of the layers from ArcGIS online were
+added with their symbology already classified. For example, streets are
+already classified according to the Maintenance variable, and Buildings
+are categorized according to type (BTYPE).</p>
+<p>Right click on the Parcels layer and go to symbology. In the
+symbology dialog box, select ‘unique values’ as the primary symbology,
+‘PROPCLASS’ as the field. We now have created a unique value map of
+parcels categorized according to property type.</p>
+<p>Please see here for an extensive tutorial on <a
+href="https://pro.arcgis.com/en/pro-app/latest/get-started/symbolize-your-data.htm">Symbology</a>
+in ArcGIS Pro.</p>
+<p><br></p>
+</div>
+<div id="creating-labels" class="section level4">
+<h4>Creating Labels</h4>
+<p>Close the <strong>Symbology</strong> pane. Again, right click on the
+municipalities layer in the Contents and go to the
+<strong>Labeling</strong> properties. In the <strong>Label</strong>
+class pane, notice the default attribute (‘Name’) under the
+<strong>Expression box</strong>. Delete this and identify
+<strong>‘FULLNAME’</strong> as the appropriate field (this will specify
+to Arc which attributes to use for the labels). Note that within this
+dialog box you can adjust the label style and placement properties of
+the labels. Click Apply. Back in the contents pane, right click on the
+municipalities layer, and click <strong>Label</strong> – the name of
+each municipality will now appear in the map.</p>
+<p><left><img src="figures/label.png" width="250"></left></p>
+<p>You have now created a unique value map for Tompkins County
+municipalities. Click here for extensive tutorial on <a
+href="https://pro.arcgis.com/en/pro-app/latest/get-started/label-your-map.htm">Labels</a>
+in ArcGIS Pro.</p>
+<p><br></p>
+</div>
+</div>
+<div id="mapping-layouts" class="section level3">
+<h3><strong>Mapping layouts</strong></h3>
+<p>Now we will come to the final steps of mapping. We will now create a
+map layout. For this layout, we will include a zoomed view of downtown
+Ithaca that displays streets, parcels, and polling locations with a
+context map of Tompkins County that has all the municipal boundaries
+labeled with municipal names included.</p>
+<p><strong>Most importantly, these are the basic elements you should
+include to your map layout every time you create a map!!!</strong></p>
+<ol style="list-style-type: decimal">
+<li>Title (and sub-titles if necessary)</li>
+<li>Legend (Is it legible? Does it make sense? Are the titles coherent?
+Do the number breaks make sense?)</li>
+<li>Metadata/notes (tell us about the map! Who created it? Where? Date?
+What is the data source? Projection? Units? How is the data classified?
+What is the purpose of the map?)</li>
+<li>Scale bar (Do units (feet, miles), breaks (not too many!) make
+sense?)</li>
+<li>A north arrow</li>
+</ol>
+<p>Now, let’s get our “hands dirty”.</p>
+<p><br></p>
+<div id="creating-a-layout." class="section level4">
+<h4>Creating a layout.</h4>
+<p>The first step in making a page layout is to insert a blank layout.
+On the ribbon, click the <strong>Insert</strong> tab. In the
+<strong>Project</strong> group, click New Layout to show page size and
+orientation options. Under <strong>ANSI - Portrait</strong>, click
+<strong>Letter</strong> (this is a matter of preference). A new, blank
+layout view opens.</p>
+<p><left><img src="figures/letterlayout.png" width="250"></left></p>
+<p>Let’s give the layout a name. In the Contents pane of <strong>layout
+view</strong>, right-click <strong>Layout</strong> and click
+<strong>Properties.</strong> On the Layout Properties dialog box, change
+the name from Layout to ‘Ithaca’.</p>
+<p>Now let us create a map frame in our layout. Under the
+<strong>Insert</strong> tab, click the <strong>Map Frame</strong>
+drop-down arrow. Select the frame with your data (usually not the first
+one, the first one is the default). Use your mouse to draw a large
+rectangle on the layout page. The map frame is added to the layout. It
+is currently selected, as indicated by selection handles. This will
+allow us to move it around the page to position it correctly.</p>
+<p><left><img src="figures/insertmap.png" width="250"></left></p>
+<p>Right click inside the frame and select <strong>Activate</strong>
+(this can also be accessed through the Layout Tab at the top as well).
+This will allow you to manipulate the map data within the layout frame
+and select the correct size and position for your data.</p>
+<p><left><img src="figures/activate.png" width="250"></left></p>
+<p>In the Contents pane, right-click Map Frame and click
+<strong>Properties</strong>. In the Map Frame
+<strong>Properties</strong> dialog box, click the
+<strong>General</strong> tab if necessary. Change the name to ‘Ithaca’.
+Notice at the top, we can toggle between the <strong>layout view and the
+map view</strong>:</p>
+<p>In the layout view, Zoom in to the downtown area by using mouse wheel
+(remember you have to have the map frame activated. The symbology of the
+polling places should be red stars. The symbology of the streets should
+be a single symbol. The symbology of the parcels should be categorized
+according to property class.(What we have done before)</p>
+<p>To close an activation session to avoid unintended changes, go to
+<strong>Activated Map Frame Layout tab</strong>, click on the
+<strong>close
+activation</strong><left><img src="figures/closebutton.png" width="40"></left>
+at the top left.</p>
+<p><br></p>
+</div>
+<div id="add-a-second-map-frame-context-map" class="section level4">
+<h4>Add a second map frame (context map)</h4>
+<p>Let’s create a context map. Under the <strong>insert</strong> tab,
+add a new map. Note that insert a map, not a layout frame!!! In the
+<strong>Contents pane</strong>, under Drawing Order, right-click
+<strong>Map</strong> and click <strong>Properties</strong>. In the Map
+<strong>Properties</strong> dialog box, click the
+<strong>General</strong> tab if necessary. Change the name to ‘Tompkins
+County’.</p>
+<p><left><img src="figures/newmap.png" width="450"></left></p>
+<p>This time, add only the Municipal boundaries layer to this map frame.
+You can do it like this:</p>
+<ul>
+<li>Go to Ithaca map, right click on the Municipal boundaries layer</li>
+<li>Select “Copy”</li>
+<li>Go to Tompkins map, right click and select paste</li>
+</ul>
+<p><left><img src="figures/secondmap.png" width="450"></left></p>
+<p>Re-title the layer and create labels for their full names (feel free
+to experiment with placement and stylistic considerations).</p>
+<p>Now, add a second “Map Frame” to your Ithaca layout to display the
+Tompkins County map (To do this, you need to de-activate your previous
+layout session, follow the steps we showed in the previous part,
+<em>think through it yourself</em>.)</p>
+<p><left><img src="figures/secondmapframe.png" width="450"></left></p>
+<p>Within the <strong>contents pane</strong> of layout view, rename this
+second Map frame ‘Tompkins County’.</p>
+<p>Adding data frames is useful if you wish to include overview/context
+maps, or to display maps of different variables in the same layout
+(e.g. for a poster presentation). You can individually adjust each of
+the map frames on the page. To do that remember to <strong>activate and
+de-activate</strong> different map frames.</p>
+<p><br></p>
+</div>
+<div id="add-map-extent-indicator" class="section level4">
+<h4>Add map extent indicator</h4>
+<p>Let us include a extent indicator to indicate the relationship
+between the two map frames.</p>
+<p>On the <strong>Insert</strong> tab click the <strong>Extent
+Indicator</strong> drop-down arrow and click Ithaca. In this case, you
+must first click the Map Frame of Tompkins County in order to choose
+Ithaca in the Extent Indicator. (You must be clear what kind of
+relationship you want to indicate among these maps! In this case, the
+relation is containing.)</p>
+<p>Open (right click) the <strong>properties</strong> for <strong>the
+Extent of Ithaca</strong> and the <strong>Format Extent Indicator
+pane</strong> appears.</p>
+<p><left><img src="figures/extendind.png" width="300"></left></p>
+<p>In the Format Extent Indicator pane, you can select an appropriate
+symbol for the extent map. Under <strong>Extent Indicator</strong>,
+check the <strong>Apply Symbol outside extent tab</strong>, and for
+<strong>Leader</strong> style select “<strong>Line to center</strong>”.
+You will find a line linking between the source map frame and the extent
+indicator.</p>
+<p><left><img src="figures/extendconnect.png" width="300"></left></p>
+<p><br></p>
+</div>
+<div id="add-map-layout-elements" class="section level4">
+<h4>Add map layout elements</h4>
+<p>You’ll add a legend, north arrow, and scale bar to the layout. The
+legend explains the map’s symbology. The north arrow and scale bar
+provide geographic context. Legends: Note: Before inserting a legend,
+spaces and any extraneous or unnecessary symbols or icons should be
+removed. You will also want to take this opportunity to delete
+unnecessary elements (for example, parcels contain a field for ’All
+other values”, which is not particularly useful in a legend. Open the
+symbology for the parcels layer, and adjust (i.e., delete) both the
+symbology and the text for this category. The legend should include the
+property classes, streets, and polling places</p>
+<p>General notes on Legends: The legends below are for a map of
+household median income based on census data. Think about all the ways
+in which the legend on the left, which is what you get by accepting the
+ArcGIS defaults, is hard to understand. The bottom line: DO not create a
+map with a legend that looks like the one on the left!</p>
+<p>Under the Insert tab, click Legend . To work with the properties of
+the legend as a whole, right-click the Legend heading in the Contents
+pane and click Properties. Alternatively, right-click the selected
+legend on the layout). We are interested in displaying a legend for the
+‘Ithaca’ map frame (not Tompkins County). Try cleaning up the legend so
+that only the most important information is showing.</p>
+<p>Note: If you fail to clean the legend, you can convert the legend to
+a graphic and manipulate the legend independently. you should only use
+this function if the tools in legend properties window are not
+sufficient. Once you convert your legend to a graphic it is no longer
+connected to the data, which means the legend will no longer reflect
+changes you make on your map, e.g., it will not add new layers or
+reflect changes in colors.</p>
+<ol style="list-style-type: decimal">
+<li>Move the legend off the map.</li>
+<li>Right Click on the legend and choose Convert to Graphics.</li>
+<li>Right Click on the legend and choose Ungroup. You now can move and
+edit all of the elements of the legend independently.</li>
+<li>When you are done with your edits, click the mouse and drag a
+rectangle over all of the elements of your legend to highlight all of
+them. Right click and choose Group.</li>
+</ol>
+<p>You can add background colors to your data frame – right click on the
+data frame within the table of contents and go to Properties/Frame –
+select a background or border of your choice</p>
+<p>Scale Bars: A word on scale bars:</p>
+<p>• The first scale bar above is what ArcGIS gave as the default after
+we inserted a scale and did nothing else. It shows quite arbitrary
+numbers, e.g., 2,350 and 4,700, which are not acceptable.<br />
+• The second scale bar reflects the fact that we specified that the
+distance units be in miles, because for distances over a mile, it is
+easier to understand miles than feet (same with meters and kilometers).
+But again, the numbers are quite arbitrary. • The last scale bar is in
+miles AND it is easy to read and to use as a measure on the map because
+it uses whole numbers and has easily understandable divisions of whole
+numbers (0.25, 0.5, 0.75). This was done easily by simply stretching out
+the scale bar manually until it said 2 miles (alternatively we could
+have compressed it to 1 mile)</p>
+<p>The bottom line is – NEVER simply accept the default if it is not
+easy to read and to use! Take control over your scale bar! Now insert a
+scale bar: There are many options. I chose the simplest, but feel free
+to find one that works for you. Place the scale bar, notice that the
+default may not be the most intuitive! We can grab the end and extend
+the scale bar so that it includes more obvious break points.</p>
+<p>Still a bit cluttered for my taste (0.13 miles is not an intuitive
+distance!) In the format scale bar pane, reduce the number of divisions
+from 2 to 1. Also note that we can adjust the map units as well as the
+map frame (Tompkins County is merely the context, so no need to create a
+scale bar). The downtown Ithaca map frame is important one here. For the
+downtown Ithaca map, feet may be appropriate. For the Tompkins County
+data frame, miles may be appropriate. Much better in my opinion!</p>
+<p>6.5 Insert text Next, you’ll add a map title and some descriptive
+text. On the Insert tab, in the Graphics and Text group, click the
+Rectangle text tool . On the layout, above the map frame, draw a
+rectangle for your map title. When you release the mouse button, the
+word Text appears inside an outline of the box. The text is highlighted
+so you can start to edit it. In the Format text panel, edit the font
+size, style and color (Under text symbol/properties) Alternatively, On
+the ribbon, under Text, click the Format tab. Adjust the font, style and
+size appropriately.</p>
+<p>Change Text Format under Ribbon</p>
+<p>Editing Text Format Under text symbol/properties Add an appropriate
+title (short, concise, direct) and sub-title (if necessary). When you’re
+finished, click an empty area on the layout. The text element is now
+selected on the layout. It also typical to include a text box with name,
+date, data source and projection information, as well as other pertinent
+information. For now, name and date are fine.</p>
+<p>Insert a north arrow (personally I prefer one with clean, modern
+lines, but that’s just me!), size and place on layout accordingly.</p>
+<p><br></p>
+</div>
+<div id="export-the-layout" class="section level4">
+<h4>Export the layout</h4>
+<p>Now that your layout is finished, you can print it or export it to a
+file that can be easily shared. On the ribbon, click the Share tab. In
+the Export group, click Layout . The Export Layout pane appears. On the
+Properties tab, change File Type to PNG, JPEG or TIFF necessary. In the
+Name box type Lab 1 or something similar. Click Browse and browse to the
+location where you want to save the file. At the bottom of the pane,
+click Export. When the export is completed, click View exported file at
+the bottom of the pane. The file opens in your default image viewing
+application. If you want to print the layout, on the Share tab, in the
+Print group, click Layout . You may need to change some printer
+settings, such as the page orientation, before you send the layout to
+the printer.</p>
 <hr />
 </div>
-<div id="create-a-map-layout" class="section level2">
-<h2>Create a map layout</h2>
-<hr />
+</div>
 </div>
 <div id="now-its-your-turn" class="section level2">
-<h2>Now it’s your turn!</h2>
+<h2>Now it’s your turn!!!</h2>
+<p>The first assignment includes two parts:</p>
+<div id="part-one-making-maps-60-pts" class="section level4">
+<h4><strong>Part One: Making Maps</strong> (60 pts)</h4>
+<ol style="list-style-type: decimal">
+<li>A clean, well-organized map depicting parcels classified according
+to <strong>property class</strong>, <strong>polling places</strong> and
+<strong>streets</strong> for <strong>downtown Ithaca</strong>, plus a
+<strong>location map depicting municipalities for Tompkins
+County</strong> (i.e., the map we just produced). Make sure you include
+north arrow, scale bar, title, and text box with name, and date. 15
+points</li>
+<li>Create a unique value map of all parcels in Tompkins County
+categorized by <strong>School District</strong>. Include roads and
+change the symbology so the <strong>state routes</strong> (NYS DOT)
+stand out. Since we are including all of Tompkins County, no need for a
+context map. 15 points</li>
+<li>Create a unique values map of Downtown Ithaca buildings categorized
+by <strong>building type</strong>. Change the symbology so that you
+<strong>highlight</strong> the buildings categorized as
+<strong>commercial</strong> and <strong>retail</strong>. Meanwhile,
+please include Tompkins County context map this time. 15 points</li>
+<li>A map of polling places labeled with <strong>accompanying
+addresses</strong> for the City of Ithaca. Include roads and context
+map. 15 points</li>
+</ol>
+</div>
+<div id="part-two-critiquing-a-map-40-pts" class="section level4">
+<h4><strong>Part Two: Critiquing a Map</strong> (40 pts)</h4>
+<p>Maps are all around us, and they can be a great source of
+inspiration. However, they can also be misleading (as Monmonier argues
+in his 1991 classic <strong><a
+href="https://lecturasurbanas.files.wordpress.com/2011/08/monmonier_how-to-lie-with-maps.pdf">How
+to Lie with Maps</a></strong> )</p>
+<p>Find a map and critique it, post a copy of your answers on Canvas
+Discussion. To assess the effectiveness of the map, answering the
+following questions:</p>
+<ul>
+<li>Do you like the map? Why or why not?</li>
+<li>Is the map misleading in anyway? Does it exaggerate the key
+point?</li>
+<li>Is there extra information that distracts your attention from the
+data or makes the map “look better”?</li>
+<li>What visualization techniques from this map would you like to use in
+your own maps? What would you change?</li>
+</ul>
 <p><br> <br></p>
 <p><strong>The END</strong></p>
+</div>
 </div>
 
 

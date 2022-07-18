@@ -324,66 +324,50 @@ In the Format Extent Indicator pane, you can select an appropriate symbol for th
 
 #### Add map layout elements
 
-You'll add a legend, north arrow, and scale bar to the layout. The legend explains the map's symbology. The north arrow and scale bar provide geographic context.
-Legends: 
-Note: Before inserting a legend, spaces and any extraneous or unnecessary symbols or icons should be removed. You will also want to take this opportunity to delete unnecessary elements (for example, parcels contain a field for ‘All other values”, which is not particularly useful in a legend. Open the symbology for the parcels layer, and adjust (i.e., delete) both the symbology and the text for this category.
-The legend should include the property classes, streets, and polling places
+Now we come to the final steps of making a map! We will add a legend, north arrow, scale bar and a text note to the layout. The legend explains the map's symbology. The north arrow and scale bar provide geographic context. And the text note provides the metadata of your map. (Before adding all the elements, remember to de-activate the layout.)
 
-General notes on Legends: 
-The legends below are for a map of household median income based on census data. Think about all the ways in which the legend on the left, which is what you get by accepting the ArcGIS defaults, is hard to understand. The bottom line: DO not create a map with a legend that looks like the one on the left!
+**Insert legends**: 
 
-Under the Insert tab, click Legend  . 
-To work with the properties of the legend as a whole, right-click the Legend heading in the Contents pane and click Properties. Alternatively, right-click the selected legend on the layout). We are interested in displaying a legend for the ‘Ithaca’ map frame (not Tompkins County). Try cleaning up the legend so that only the most important information is showing.  
+Before inserting a legend, spaces and any extraneous or unnecessary symbols or icons should be removed. You will also want to take this opportunity to delete unnecessary elements (for example, parcels contain a field for ‘All other values”, which is not particularly useful in a legend. Open the symbology for the parcels layer, and adjust (i.e., delete) both the symbology and the text for this category. For this particular map, the legend should include the property classes, streets, and polling places. **Remember, do not use the ArcGIS default setting for your legends!**
 
-Note: If you fail to clean the legend, you can convert the legend to a graphic and manipulate the legend independently.  you should only use this function if the tools in legend properties window are not sufficient. Once you convert your legend to a graphic it is no longer connected to the data, which means the legend will no longer reflect changes you make on your map, e.g., it will not add new layers or reflect changes in colors. 
+Now, let's insert the legend. Under the **Insert** tab, click **Legend**. On the layout, anywhere suitable on the map frame, draw a rectangle using your mouse for your legend. To work with the properties of the legend as a whole, right-click the **Legend** heading in the **Contents** pane and click **Properties** (Alternatively, right-click the selected legend on the layout). We are interested in displaying a legend for the ‘Ithaca’ map frame (not Tompkins County). Try cleaning up the legend so that only the most important information is showing.  
 
-1. Move the legend off the map. 
-2. Right Click on the legend and choose Convert to Graphics. 
-3. Right Click on the legend and choose Ungroup. You now can move and edit all of the elements of the legend independently. 
-4. When you are done with your edits, click the mouse and drag a rectangle over all of the elements of your legend to highlight all of them. Right click and choose Group. 
+>Note: If you want to further adjust and clean the legend, you can convert the legend to a graphic and manipulate the legend independently. You should only use this function if the tools in legend properties window are not sufficient. Once you convert your legend to a graphic it is no longer connected to the data, which means the legend will no longer reflect changes you make on your map, e.g., it will not add new layers or reflect changes in colors. 
 
-You can add background colors to your data frame – right click on the data frame within the table of contents and go to Properties/Frame – select a background or border of your choice 
+The steps are as follows:
 
-Scale Bars: 
-A word on scale bars:
+  1. Right Click on the legend and choose Convert to Graphics. 
+  2. Right Click on the legend and choose Ungroup. You now can move and edit all of the elements of the legend independently. 
+  3. When you are done with your edits, click the mouse and drag a rectangle over all of the elements of your legend to highlight all of them. Right click and choose Group. 
 
- 
 
-•	The first scale bar above is what ArcGIS gave as the default after we inserted a scale and did nothing else. It shows quite arbitrary numbers, e.g., 2,350 and 4,700, which are not acceptable.   
-•	The second scale bar reflects the fact that we specified that the distance units be in miles, because for distances over a mile, it is easier to understand miles than feet (same with meters and kilometers). But again, the numbers are quite arbitrary.
-•	The last scale bar is in miles AND it is easy to read and to use as a measure on the map because it uses whole numbers and has easily understandable divisions of whole numbers (0.25, 0.5, 0.75). This was done easily by simply stretching out the scale bar manually until it said 2 miles (alternatively we could have compressed it to 1 mile) 
 
-The bottom line is – NEVER simply accept the default if it is not easy to read and to use! Take control over your scale bar!
-Now insert a scale bar: There are many options. I chose the simplest, but feel free to find one that works for you.
-Place the scale bar, notice that the default may not be the most intuitive!
-We can grab the end and extend the scale bar so that it includes more obvious break points.
- 
-Still a bit cluttered for my taste (0.13 miles is not an intuitive distance!) In the format scale bar pane, reduce the number of divisions from 2 to 1. Also note that we can adjust the map units as well as the map frame (Tompkins County is merely the context, so no need to create a scale bar). The downtown Ithaca map frame is important one here. For the downtown Ithaca map, feet may be appropriate. For the Tompkins County data frame, miles may be appropriate.
-Much better in my opinion!
+**Insert scale bars:**
 
-6.5 Insert text
-Next, you'll add a map title and some descriptive text. On the Insert tab, in the Graphics and Text group, click the Rectangle text tool  . On the layout, above the map frame, draw a rectangle for your map title.
-When you release the mouse button, the word Text appears inside an outline of the box. The text is highlighted so you can start to edit it.
-In the Format text panel, edit the font size, style and color (Under text symbol/properties) Alternatively, On the ribbon, under Text, click the Format tab. Adjust the font, style and size appropriately.
- 
-Change Text Format under Ribbon
- 
-Editing Text Format Under text symbol/properties
-Add an appropriate title (short, concise, direct) and sub-title (if necessary). When you're finished, click an empty area on the layout. The text element is now selected on the layout.
-It also typical to include a text box with name, date, data source and projection information, as well as other pertinent information. For now, name and date are fine. 
+Same as above, never simply accept the default if it is not easy to read and to use! There are some general rules for scale bars:
 
-Insert a north arrow (personally I prefer one with clean, modern lines, but that’s just me!), size and place on layout accordingly.
+  1. Use appropriate understandable units based on the scale of your map. For example, for the downtown Ithaca map, feet may be appropriate. For the Tompkins County data frame, miles may be appropriate.
+  2. Don't use arbitrary number as breaks, uses whole numbers such as 0.25/0.5/1/2.
+
+We can grab the end and extend the scale bar so that it includes more obvious break points. Also in the format scale bar pane, you can adjust the number of divisions. Also note that we can adjust the map units as well as the map frame. 
+
+**Insert text:**
+
+Next, you'll add a map title and some descriptive text. On the **Insert** tab, in the **Graphics and Text group**, click the Rectangle text tool<left><img src="figures/texttool.png" width="20"></left>. On the layout, above the map frame, draw a rectangle for your map title.
+When you release the mouse button, the word Text appears inside an outline of the box. The text is highlighted so you can start to edit it. In the **Format** text panel, edit the font size, style and color (Under text symbol/properties) Alternatively, On the ribbon, under Text, click the Format tab. Adjust the font, style and size appropriately.
+
+You can add multiple text boxes. Remember to add an appropriate title (short, concise, direct) and sub-title (if necessary) and a text box for meta data. When you're finished, click an empty area on the layout. It also typical to include a text box with name, date, data source and projection information, as well as other pertinent information. For now, name and date are fine. 
+
+**Insert a north arrow**
+
+DIY: Size and place it on the layout accordingly.
 
 <br>
 
 #### Export the layout
 
-Now that your layout is finished, you can print it or export it to a file that can be easily shared. On the ribbon, click the Share tab. In the Export group, click Layout  .
-The Export Layout pane appears. On the Properties tab, change File Type to PNG, JPEG or TIFF necessary.
-In the Name box type Lab 1 or something similar. Click Browse   and browse to the location where you want to save the file.
-At the bottom of the pane, click Export.
-When the export is completed, click View exported file at the bottom of the pane.
-The file opens in your default image viewing application. If you want to print the layout, on the Share tab, in the Print group, click Layout  . You may need to change some printer settings, such as the page orientation, before you send the layout to the printer.
+Now that your layout is finished, you can print it or export it to a file that can be easily shared. On the **ribbon**, click the **Share** tab. In the **Output** group, click **Export Layout**. The Export Layout pane appears. On the Properties tab, change File Type to PNG, JPEG or TIFF necessary. In the Name box type Lab 1 or something similar. Click **Browse** and browse to the location where you want to save the file. At the bottom of the pane, click **Export**.
+When the export is completed, click View exported file at the bottom of the pane. The file opens in your default image viewing application. You can also print your map layout if you want.
 
 ---
 

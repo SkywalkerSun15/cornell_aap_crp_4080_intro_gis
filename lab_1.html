@@ -323,8 +323,21 @@ div.tocify {
 <li>
   <a href="syllabus.html">Syllabus</a>
 </li>
-<li>
-  <a href="labs.html">Labs</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Labs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Lab handouts</li>
+    <li>
+      <a href="lab_prep.html">Lab Preparation</a>
+    </li>
+    <li>
+      <a href="lab_1.html">Lab 1: Get Familiar with ArcGIS Pro</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -859,36 +872,42 @@ indicator.</p>
 </div>
 <div id="add-map-layout-elements" class="section level4">
 <h4>Add map layout elements</h4>
-<p>You’ll add a legend, north arrow, and scale bar to the layout. The
-legend explains the map’s symbology. The north arrow and scale bar
-provide geographic context. Legends: Note: Before inserting a legend,
-spaces and any extraneous or unnecessary symbols or icons should be
-removed. You will also want to take this opportunity to delete
-unnecessary elements (for example, parcels contain a field for ’All
-other values”, which is not particularly useful in a legend. Open the
-symbology for the parcels layer, and adjust (i.e., delete) both the
-symbology and the text for this category. The legend should include the
-property classes, streets, and polling places</p>
-<p>General notes on Legends: The legends below are for a map of
-household median income based on census data. Think about all the ways
-in which the legend on the left, which is what you get by accepting the
-ArcGIS defaults, is hard to understand. The bottom line: DO not create a
-map with a legend that looks like the one on the left!</p>
-<p>Under the Insert tab, click Legend . To work with the properties of
-the legend as a whole, right-click the Legend heading in the Contents
-pane and click Properties. Alternatively, right-click the selected
-legend on the layout). We are interested in displaying a legend for the
-‘Ithaca’ map frame (not Tompkins County). Try cleaning up the legend so
-that only the most important information is showing.</p>
-<p>Note: If you fail to clean the legend, you can convert the legend to
-a graphic and manipulate the legend independently. you should only use
-this function if the tools in legend properties window are not
-sufficient. Once you convert your legend to a graphic it is no longer
-connected to the data, which means the legend will no longer reflect
-changes you make on your map, e.g., it will not add new layers or
-reflect changes in colors.</p>
+<p>Now we come to the final steps of making a map! We will add a legend,
+north arrow, scale bar and a text note to the layout. The legend
+explains the map’s symbology. The north arrow and scale bar provide
+geographic context. And the text note provides the metadata of your map.
+(Before adding all the elements, remember to de-activate the
+layout.)</p>
+<p><strong>Insert legends</strong>:</p>
+<p>Before inserting a legend, spaces and any extraneous or unnecessary
+symbols or icons should be removed. You will also want to take this
+opportunity to delete unnecessary elements (for example, parcels contain
+a field for ’All other values”, which is not particularly useful in a
+legend. Open the symbology for the parcels layer, and adjust (i.e.,
+delete) both the symbology and the text for this category. For this
+particular map, the legend should include the property classes, streets,
+and polling places. <strong>Remember, do not use the ArcGIS default
+setting for your legends!</strong></p>
+<p>Now, let’s insert the legend. Under the <strong>Insert</strong> tab,
+click <strong>Legend</strong>. On the layout, anywhere suitable on the
+map frame, draw a rectangle using your mouse for your legend. To work
+with the properties of the legend as a whole, right-click the
+<strong>Legend</strong> heading in the <strong>Contents</strong> pane
+and click <strong>Properties</strong> (Alternatively, right-click the
+selected legend on the layout). We are interested in displaying a legend
+for the ‘Ithaca’ map frame (not Tompkins County). Try cleaning up the
+legend so that only the most important information is showing.</p>
+<blockquote>
+<p>Note: If you want to further adjust and clean the legend, you can
+convert the legend to a graphic and manipulate the legend independently.
+You should only use this function if the tools in legend properties
+window are not sufficient. Once you convert your legend to a graphic it
+is no longer connected to the data, which means the legend will no
+longer reflect changes you make on your map, e.g., it will not add new
+layers or reflect changes in colors.</p>
+</blockquote>
+<p>The steps are as follows:</p>
 <ol style="list-style-type: decimal">
-<li>Move the legend off the map.</li>
 <li>Right Click on the legend and choose Convert to Graphics.</li>
 <li>Right Click on the legend and choose Ungroup. You now can move and
 edit all of the elements of the legend independently.</li>
@@ -896,69 +915,54 @@ edit all of the elements of the legend independently.</li>
 rectangle over all of the elements of your legend to highlight all of
 them. Right click and choose Group.</li>
 </ol>
-<p>You can add background colors to your data frame – right click on the
-data frame within the table of contents and go to Properties/Frame –
-select a background or border of your choice</p>
-<p>Scale Bars: A word on scale bars:</p>
-<p>• The first scale bar above is what ArcGIS gave as the default after
-we inserted a scale and did nothing else. It shows quite arbitrary
-numbers, e.g., 2,350 and 4,700, which are not acceptable.<br />
-• The second scale bar reflects the fact that we specified that the
-distance units be in miles, because for distances over a mile, it is
-easier to understand miles than feet (same with meters and kilometers).
-But again, the numbers are quite arbitrary. • The last scale bar is in
-miles AND it is easy to read and to use as a measure on the map because
-it uses whole numbers and has easily understandable divisions of whole
-numbers (0.25, 0.5, 0.75). This was done easily by simply stretching out
-the scale bar manually until it said 2 miles (alternatively we could
-have compressed it to 1 mile)</p>
-<p>The bottom line is – NEVER simply accept the default if it is not
-easy to read and to use! Take control over your scale bar! Now insert a
-scale bar: There are many options. I chose the simplest, but feel free
-to find one that works for you. Place the scale bar, notice that the
-default may not be the most intuitive! We can grab the end and extend
-the scale bar so that it includes more obvious break points.</p>
-<p>Still a bit cluttered for my taste (0.13 miles is not an intuitive
-distance!) In the format scale bar pane, reduce the number of divisions
-from 2 to 1. Also note that we can adjust the map units as well as the
-map frame (Tompkins County is merely the context, so no need to create a
-scale bar). The downtown Ithaca map frame is important one here. For the
-downtown Ithaca map, feet may be appropriate. For the Tompkins County
-data frame, miles may be appropriate. Much better in my opinion!</p>
-<p>6.5 Insert text Next, you’ll add a map title and some descriptive
-text. On the Insert tab, in the Graphics and Text group, click the
-Rectangle text tool . On the layout, above the map frame, draw a
-rectangle for your map title. When you release the mouse button, the
-word Text appears inside an outline of the box. The text is highlighted
-so you can start to edit it. In the Format text panel, edit the font
-size, style and color (Under text symbol/properties) Alternatively, On
-the ribbon, under Text, click the Format tab. Adjust the font, style and
-size appropriately.</p>
-<p>Change Text Format under Ribbon</p>
-<p>Editing Text Format Under text symbol/properties Add an appropriate
-title (short, concise, direct) and sub-title (if necessary). When you’re
-finished, click an empty area on the layout. The text element is now
-selected on the layout. It also typical to include a text box with name,
-date, data source and projection information, as well as other pertinent
-information. For now, name and date are fine.</p>
-<p>Insert a north arrow (personally I prefer one with clean, modern
-lines, but that’s just me!), size and place on layout accordingly.</p>
+<p><strong>Insert scale bars:</strong></p>
+<p>Same as above, never simply accept the default if it is not easy to
+read and to use! There are some general rules for scale bars:</p>
+<ol style="list-style-type: decimal">
+<li>Use appropriate understandable units based on the scale of your map.
+For example, for the downtown Ithaca map, feet may be appropriate. For
+the Tompkins County data frame, miles may be appropriate.</li>
+<li>Don’t use arbitrary number as breaks, uses whole numbers such as
+0.25/0.5/1/2.</li>
+</ol>
+<p>We can grab the end and extend the scale bar so that it includes more
+obvious break points. Also in the format scale bar pane, you can adjust
+the number of divisions. Also note that we can adjust the map units as
+well as the map frame.</p>
+<p><strong>Insert text:</strong></p>
+<p>Next, you’ll add a map title and some descriptive text. On the
+<strong>Insert</strong> tab, in the <strong>Graphics and Text
+group</strong>, click the Rectangle text
+tool<left><img src="figures/texttool.png" width="20"></left>. On the
+layout, above the map frame, draw a rectangle for your map title. When
+you release the mouse button, the word Text appears inside an outline of
+the box. The text is highlighted so you can start to edit it. In the
+<strong>Format</strong> text panel, edit the font size, style and color
+(Under text symbol/properties) Alternatively, On the ribbon, under Text,
+click the Format tab. Adjust the font, style and size appropriately.</p>
+<p>You can add multiple text boxes. Remember to add an appropriate title
+(short, concise, direct) and sub-title (if necessary) and a text box for
+meta data. When you’re finished, click an empty area on the layout. It
+also typical to include a text box with name, date, data source and
+projection information, as well as other pertinent information. For now,
+name and date are fine.</p>
+<p><strong>Insert a north arrow</strong></p>
+<p>DIY: Size and place it on the layout accordingly.</p>
 <p><br></p>
 </div>
 <div id="export-the-layout" class="section level4">
 <h4>Export the layout</h4>
 <p>Now that your layout is finished, you can print it or export it to a
-file that can be easily shared. On the ribbon, click the Share tab. In
-the Export group, click Layout . The Export Layout pane appears. On the
-Properties tab, change File Type to PNG, JPEG or TIFF necessary. In the
-Name box type Lab 1 or something similar. Click Browse and browse to the
-location where you want to save the file. At the bottom of the pane,
-click Export. When the export is completed, click View exported file at
-the bottom of the pane. The file opens in your default image viewing
-application. If you want to print the layout, on the Share tab, in the
-Print group, click Layout . You may need to change some printer
-settings, such as the page orientation, before you send the layout to
-the printer.</p>
+file that can be easily shared. On the <strong>ribbon</strong>, click
+the <strong>Share</strong> tab. In the <strong>Output</strong> group,
+click <strong>Export Layout</strong>. The Export Layout pane appears. On
+the Properties tab, change File Type to PNG, JPEG or TIFF necessary. In
+the Name box type Lab 1 or something similar. Click
+<strong>Browse</strong> and browse to the location where you want to
+save the file. At the bottom of the pane, click <strong>Export</strong>.
+When the export is completed, click View exported file at the bottom of
+the pane. The file opens in your default image viewing application. You
+can also print your map layout if you want.</p>
 <hr />
 </div>
 </div>

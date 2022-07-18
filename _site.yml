@@ -7,7 +7,12 @@ navbar:
     - text: "Syllabus"
       href: syllabus.html
     - text: "Labs"
-      href: labs.html
+      menu:
+      - text: Lab handouts
+      - text: "Lab Preparation"
+        href: lab_prep.html
+      - text: "Lab 1: Get Familiar with ArcGIS Pro"
+        href: lab_1.html
 output_dir: "."
 output:
   html_document:

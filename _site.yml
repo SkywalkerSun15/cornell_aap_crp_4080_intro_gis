@@ -13,6 +13,8 @@ navbar:
         href: lab_prep.html
       - text: "Lab 1: Get Familiar with ArcGIS Pro"
         href: lab_1.html
+      - text: "Lab 2: Thematic Mapping"
+        href: lab_2.html
 output_dir: "."
 output:
   html_document:

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Lab 2: Thematic Mapping</title>
+
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CRP4080: Introduction to GIS</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Homepage</a>
+</li>
+<li>
+  <a href="syllabus.html">Syllabus</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Labs
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Lab handouts</li>
+    <li>
+      <a href="lab_prep.html">Lab Preparation</a>
+    </li>
+    <li>
+      <a href="lab_1.html">Lab 1: Get Familiar with ArcGIS Pro</a>
+    </li>
+    <li>
+      <a href="lab_2.html">Lab 2: Thematic Mapping</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Lab 2: Thematic Mapping</h1>
+
+</div>
+
+
+<hr />
+<p><strong>Due Date:</strong></p>
+<p><strong>Instructor: Xiaozhong Sun (<a href="mailto:xs243@cornell.edu"
+class="email">xs243@cornell.edu</a>)</strong></p>
+<p><strong>Lab TAs:</strong></p>
+<p><strong>Location: Sibley 305, Barclay Gibbs Jones Computer
+Lab</strong></p>
+<p><strong>Total Points:</strong></p>
+<hr />
+<div id="goals-for-this-lab" class="section level2">
+<h2>Goals for this lab</h2>
+<p>Today’s lab has two parts:</p>
+<ol style="list-style-type: decimal">
+<li>Selecting features</li>
+<li><strong>Thematic Mapping</strong></li>
+</ol>
+<p>After today’s lab, you will be able to select and export features in
+varies ways; making thematic map showing patterns or distributions of
+variables of interests.</p>
+<hr />
+</div>
+<div id="know-your-data" class="section level2">
+<h2>Know your data</h2>
+<p>For today’s lab, we will use a 2010 U.S. Census County boundary layer
+and a 2010 U.S. Census State boundary layer.</p>
+<hr />
+</div>
+<div id="selecting-features" class="section level2">
+<h2>Selecting Features</h2>
+<p>Now we will learn how to select features in ArcGIS. Selecting
+features are very handy when you want to edit GIS data. If you are doing
+an operation that includes editing or extracting a specific feature
+within a shapefile, you will likely need to Select that feature.</p>
+<p>There are several ways for you to select a feature.</p>
+<p><br></p>
+<div id="selecting-through-attribute-table" class="section level3">
+<h3>Selecting through attribute table</h3>
+<p>Right click on the <strong>STATES</strong> layer and select
+<strong>Open Attribute Table</strong>. Right click on column header for
+the <strong>“STATE_NAME”</strong> column, choose <strong>Sort
+Ascending</strong>. Click in the “left bar” of the row that contains New
+York (FID 15). See Figure below. Clicking in this area selects the
+feature. If you look at the map pane in your window, notice that the
+border of New York State is highlighted with the same color as it was
+highlighted in the attribute table (fluorescent blue). You can also
+select multiple rows by holding shift key.</p>
+<p><left><img src="figures/selectattribute.png" width="300"></left></p>
+<p>Back in the Attribute Table window, right click on the left bar of
+the selected state (New York) in the attribute table. Click <strong>Zoom
+To</strong>. This zooms the display to the extent of the feature, in
+this case, New York State. You may also do this through the
+<strong>Navigate</strong> Group’s <strong>Zoom to selected
+features</strong>.</p>
+<ul>
+<li>Note that if County layer is listed above State layer in your Layers
+pane (which is likely, since they are in alphabetical order in your
+directory) you will see the outlines of US counties within the
+highlighted area of New York State. This is somewhat misleading, because
+the selection is not done in the County layer. In your Layers pane,
+toggle on and off the Counties and States layers to see what happens.
+Make sure the layer of feature selected is on the top of your layer pane
+to aviod confusion.</li>
+</ul>
+<p>Now let’s export the feature we just select. We will create a new
+shapefile of New York State. Sometimes, creating new layers limited to
+your study area minimizes the RAM, or memory required for processing.
+Extracting the study area (as this procedure is often called) is a
+necessary step of preparing data for GIS analysis.</p>
+<p>With New York State selected, right-click on the
+<strong>States</strong> layer in the table of contents, choose
+<strong>Data</strong> and click <strong>Export features</strong>.</p>
+<p><left><img src="figures/exportdata.png" width="300"></left></p>
+<p>A <strong>Export Features</strong> dialog box should appear. Choose
+an output location at your local drive where you store your lab_2 data.
+Give the output the name <strong>nystate</strong>. This tool creates a
+new layer only of the selected features. Click OK. You will see that a
+new layer, <strong>nystate</strong>, is added to the table of contents
+and a layer of only NY State is added to the view.</p>
+<p>Now remember to click <strong>Clear Selected Features</strong> under
+the <strong>Selection</strong> group. This un-select any features you
+have selected. This is important, because it prevents you from doing
+operations on features you don’t intend to alter.</p>
+<p>Change the symbology of nystate so that it has no fill and a slightly
+thicker border than the counties borders.</p>
+<p><br></p>
+</div>
+<div id="selecting-through-functions-under-the-selection-group"
+class="section level3">
+<h3>Selecting through functions under the Selection group</h3>
+<p>Now let’s use the newly exported layer to practice other selection
+functions.</p>
+<p>You can also select features through functions within the
+<strong>Selection</strong> group. There are mainly two functions:
+<strong>Selecting features by attribute/Querying the data</strong> and
+<strong>Selecting by Location</strong>.</p>
+<p><left><img src="figures/selection_group.PNG" width="200"></left></p>
+<ul>
+<li>Note that you can also select features using the <strong>Select
+Features
+tooltip</strong><left><img src="figures/selecttool.png" width="30"></left>
+under the <strong>Selection</strong> group and deselect by clicking on
+white space in the Map pane. To select a feature this way, click on the
+tooltip to activate it, then click on the feature you wish to Select.
+Play around with this. When you are done, clear selections.</li>
+</ul>
+<p>Under Selection group, click <strong>Select By Location</strong>. We
+are going to select all the counties that are contained in New York
+State. In the <strong>Select Layer By Location</strong> dialogue box.
+Select <strong>COUNTIES</strong> as the <strong>input feature</strong>,
+<strong>Within</strong> as the <strong>relationship</strong>. And
+<strong>nystate</strong> as the selecting feature. Click Apply and
+OK.</p>
+<p><left><img src="figures/select_location.png" width="300"></left></p>
+<p>Now let’s check the results. Right Click on the Counties layer,
+choose Open Attribute Table. In the lower left portion of the table
+frame, click the on the <strong>Show selected records</strong> icon.
+This filters the table selected features. You can see that all counties
+of New York state are selected.</p>
+<p>Now let’s repeat the export process, this time for all the counties
+within NYS. Right Click on the Counties layer in the table of contents,
+choose Data and click Export Features as we did above. Name the new
+layer <strong>nycounties</strong>.</p>
+<ul>
+<li>As a point of comparison, you can explore different select by
+location relationships (for example, try selecting counties that are
+‘completely within’ New York State. You will note that this produces a
+slightly different selection pattern). You can also use using search
+distance measurements.</li>
+</ul>
+<p>Clear Selected Features. Change the symbology of nycounties so to
+have no fill and a thinner border than the nystate border. Turn off the
+original STATES and COUNTIES layer – we will no longer need these for
+this analysis.</p>
+<p>Now let’s practice how to select through query table. We will run a
+query to find the number of counties with a population greater than
+300,000. To do this, we will use the <strong>Select by
+Attributes</strong> option from the <strong>Selection</strong> group.
+The dialogue box uses SQL (structured query language) syntax, which is
+what many databases (even non-spatial) databases are built with.</p>
+<p>In the dialogue box, select <strong>nycounties</strong> for the input
+and <strong>New selection</strong> for the selection type. Notice the
+<strong>Where</strong> clause. A “WHERE clause” is part of a SQL SELECT
+statement that specifies which rows to select.</p>
+<p>Create the following expression: Where POP2010 is greater than
+300000. Click Run and close the dialog box. Both the attribute table and
+the shapefile for “nycounties” should now indicate 14 counties
+selected.</p>
+<p><left><img src="figures/select_query.png" width="300"></left></p>
+<p>Open the Attribute Table and click the ‘Show selected records’ as we
+did before. This helps you identify the names of selected counties.
+Export the selected counties and create a new shapefile of NY counties
+with a population greater than 300,000. Under the options menu in the
+attribute table, clear the selection and close the attribute table.</p>
+<p>Now save your project! We are about to open a new project.</p>
+<hr />
+</div>
+</div>
+<div id="thematic-mapping-and-classification" class="section level2">
+<h2>Thematic Mapping and Classification</h2>
+<p>You will now create a series of <strong>thematic map layouts</strong>
+that use different data classification schemes to depict population
+density (Population per square mile, POP10_SQMI) in New York State,
+based on 2010 Census data.</p>
+<p>Please note that you are required to make a proper
+<strong>layout</strong> of each classification method, which means you
+need to include all the necessary elements of map layouts (As for
+whether to include a context map, you decide)! This is the time you
+practice what you have learned in Lab_1. However, as these layouts are
+all fairly similar, you can create and reuse a single layout for each of
+them. You can either start a new project and import the shapefiles you
+just saved or you can continue with the same project.</p>
+<p><br></p>
+<div id="map-1" class="section level3">
+<h3><strong>Map 1</strong></h3>
+<p>Create a map layout showing the counties in NYS that have a 2010
+population of more than 300,000.</p>
+<p><br></p>
+</div>
+<div id="map-2" class="section level3">
+<h3><strong>Map 2</strong></h3>
+<p>Create a map layout using Natural Breaks classification.</p>
+<p>Steps:</p>
+<ol style="list-style-type: decimal">
+<li>In the table of contents, right click on the layer name
+<strong>nycounties</strong> and select <strong>Symbology</strong> tab.
+Under <strong>Primary Symbology</strong> select <strong>Graduated
+colors</strong>.</li>
+</ol>
+<p><left><img src="figures/symbology_graduate_color.png" width="300"></left></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Select “POP10_SQMI” as the field. (“POP10_SQMI” represents
+population density of 2010, measured in population of 2010 per square
+mile.)</li>
+<li>Based on the population density classification field, use the
+default Classification of Natural Breaks (Jenks). You can experiment
+with the number of classes and settle on which one you find appropriate.
+Note that we did not use “normalization.” We will explore this later in
+the lab. Next, select an appropriate color scheme (Generally
+monochromatic works well for the given data range).</li>
+<li>Under <strong>Advanced Symbol
+Options</strong><left><img src="figures/advanced_symbol.png" width="50"></left>,
+you can adjust the decimal places of numbers under
+<strong>Label</strong>, normally we leave two decimal places. This is a
+important step formatting your legend.</li>
+<li>Close the dialog box when you are satisfied with your creation.</li>
+</ol>
+<p><br></p>
+</div>
+<div id="map-3" class="section level3">
+<h3><strong>Map 3</strong></h3>
+<p>Follow the same procedure as for Map 2, but use the equal interval
+classification method and create a new layout with all the appropriate
+elements.</p>
+<p>When you change your classification, click on the
+<strong>Histogram</strong> tab and notice how the data classification
+intervals differ. This time, the majority of the counties fall into the
+lowest category. As you can see, the default is 5 groups or classes.
+Experiment with the number of classes and settle on which one you find
+appropriate.</p>
+<p><left><img src="figures/equal_interval.png" width="300"></left></p>
+<p>If you are unhappy with the color schemes available in ArMap, you can
+make your own and save it. The <a
+href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">Colorbrewer</a>
+website is helpful for selecting colors for graduated and categorized
+maps.</p>
+<p>Also, note that you can manually change the position of the bars of
+the <strong>Histogram</strong> by clicking and dragging them (if you
+wanted to create a custom or user defined classification). Notice that
+as soon as you drag one of the triangles, the <strong>Method</strong>
+switches to <strong>Manual Interval</strong>.</p>
+<ul>
+<li>Note: categorization is for display purposes only – it does not
+alter the underlying continuous data set. If we had 62 classes (one for
+each county), it would be very hard for the eye to distinguish between
+classes. The human eye can only decipher at most 6-8 categories.</li>
+</ul>
+<p><br></p>
+</div>
+<div id="map-4" class="section level3">
+<h3><strong>Map 4</strong></h3>
+<p>Follow the same procedure but use the <strong>quantile</strong>
+classification method and create a new layout with all the appropriate
+elements. Experiment with the number of classes and settle on one you
+find appropriate. As you toggle between the different classification
+methods, please take a moment to notice the effect on the summary
+statistics, histogram, bars and break values.</p>
+<p><br></p>
+</div>
+<div id="map-5" class="section level3">
+<h3><strong>Map 5</strong></h3>
+<p>Follow the same procedure but use the <strong>standard
+deviation</strong> classification method and create a new layout with
+all the appropriate elements. Experiment with the number of classes and
+settle on one you find appropriate.</p>
+<blockquote>
+<p><strong>Question 1: Briefly discuss some of the basic differences in
+patterns based on classification schemes. Which classification method in
+this case do you feel provides a better representation of population
+density? Provide a brief discussion of your reasoning.</strong></p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="map-6" class="section level3">
+<h3><strong>Map 6</strong></h3>
+<p>Now let’s explore normalizing data. When presenting data,
+particularly for spatial units such as political or administrative
+boundaries, researchers will often want to normalize the data, rather
+than present the raw number. As you know from your stats class, one way
+to accomplish this is by dividing each value by a total, converting the
+raw data into a proportion/percentage. Another way is to divide it by
+another variable, which converts the raw data into a ratio variable. By
+using a population density variable, we already explored one type of
+normalized data. Now let’s explore some others.</p>
+<p>Turn off the <strong>nystate</strong> and <strong>nycounties</strong>
+layers and turn back on the <strong>STATES</strong> and
+<strong>COUNTIES</strong> layers. Right click the layer
+<strong>STATES</strong>. In the <strong>Symbology</strong> tab, select
+<strong>Graduated colors</strong>. Under the <strong>Field</strong>:
+menu, select <strong>BLACK</strong>. This displays the total African
+American population for 2010 by state. Note the pattern – states with
+high populations tend to have a lot of African American people.</p>
+<p>Now under the <strong>normalization</strong> menu, select
+‘<strong>POP2010</strong>’ – notice the change in the pattern. Note that
+we have ratios instead of absolute population in the “Label” columns.
+Experiment with the number of classes and the classification method.</p>
+<p>We can change the ratio to a percentage. Click on the
+<strong>Advanced Symbol options</strong>. Under
+<strong>Category</strong>, select <strong>percentage.</strong> Check the
+box ‘Numbers represent a fraction’ and reduce the decimal places to 2
+(see box below). This will give you a more straightforward
+classification that’s easier to interpret.</p>
+<p><left><img src="figures/normalize_data.png" width="350"></left></p>
+<p>Now create a map layout of normalized Black population by State (Only
+Continental US).</p>
+<p><br></p>
+</div>
+<div id="map-7" class="section level3">
+<h3><strong>Map 7</strong></h3>
+<p>Create a multivariate map layout depicting normalized Black and
+Hispanic population together.</p>
+<p>Multivariate thematic maps are extremely useful finding spatial
+relationships. Let’s explore that relationship use your normalized layer
+of African Americans to see if there is a relationship with Hispanic
+population.</p>
+<p>Right now, you should have your normalized black population map
+showing. Copy and paste your states layer within the table of contents
+(so, you should have 2 states layers at this point!). Make sure your new
+STATES layer is on top. Give it another name like State_Hisp_Pop.</p>
+<p>This time, create a <strong>graduated symbol map</strong>
+(<strong>not graduated color map</strong>) of the population Hispanic,
+normalized by the 2010 population. Adjust the colors and the size as you
+see fit. Your map should look like the figure below.</p>
+<p><left><img src="figures/multi_var.png" width="350"></left></p>
+<blockquote>
+<p><strong>Question 2: Is there a spatial relationship between Black and
+Hispanic populations? Briefly explain.</strong></p>
+</blockquote>
+<p><br></p>
+</div>
+<div id="map-8" class="section level3">
+<h3><strong>Map 8</strong></h3>
+<p>Now let’s learn to deal with extreme values/outliers. Extreme values
+sometimes are bad for making thematic map since they will affect our
+classification and mask more useful and important information we try to
+convey. Therefore, we want to take a note (this is important!) and
+exclude them before making our maps.</p>
+<p>Using <strong>STATES</strong> layer, create a <strong>proportional
+symbol map</strong> of US states using the field POP10_SQMI using any
+particular classification scheme you would like. What happened?</p>
+<p>Washington DC has a very high population density and is throwing the
+classification off quite a bit. To confirm this, we will undertake some
+exploratory spatial data analysis.</p>
+<p>Under the <strong>Feature</strong> layer tab, select
+<strong>Data-&gt; Visualize -&gt; Create Chart</strong>.</p>
+<p><left><img src="figures/datavisual.png" width="300"></left></p>
+<p>Some additional tools become apparent, under <strong>Create
+Chart</strong>, go to <strong>QQplot</strong>. In the <strong>Chart
+Properties</strong>, under the <strong>Variables</strong> tab, select
+<strong>compare the distribution of POP10_SQMI</strong>.</p>
+<p><left><img src="figures/qqplot.png" width="300"></left></p>
+<p>You will see the distribution of population density by state.
+Highlight the outlier (just click on the dot, also a new way to select a
+feature) in the upper right - Washington DC. Note how much the inclusion
+of DC is throwing the distribution off – the next highest value (New
+Jersey) is below the line that represents a ‘normal’ distribution.</p>
+<p><left><img src="figures/dcoutlier.png" width="300"></left></p>
+<p>You can also check the outlier using <strong>Histogram</strong> under
+<strong>Create Chart</strong>. Select POP10_SQMI as the Number. A
+histogram should appear at the bottom with a chart properties box that
+contains some additional summary statistics. Washington DC lies far to
+the right, so much so that most of the other states fall into a single
+category. Note the <strong>Chart Properties</strong> box. Let’s recap
+some basic statistics that describe a distribution.</p>
+<p><left><img src="figures/chartproperty.png" width="300"></left></p>
+<p>Skewness is a measure of the symmetry of a distribution.</p>
+<ol style="list-style-type: decimal">
+<li>For symmetric distributions, the coefficient of skewness is
+zero.</li>
+<li>If a distribution has a long right tail of large values (i.e.,
+Washington DC), it is positively skewed.</li>
+<li>If it has a long-left tail of small values, it is negatively
+skewed.</li>
+<li>In addition, note that the mean (384) is larger than the median
+(101), also indicating a positively skewed distribution (the opposite
+would be true for a negatively skewed distribution).</li>
+</ol>
+<p><a
+href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm">Kurtosis</a>
+is a measure of whether the data are heavy-tailed or light-tailed
+relative to a normal distribution. That is, data sets with high kurtosis
+tend to have heavy tails, or outliers. Data sets with low kurtosis tend
+to have light tails, or lack of outliers. Normal distributions produce a
+kurtosis statistic of about zero.</p>
+<p>Clearly, we can and should exclude Washington DC to create a more
+sensible classification.</p>
+<p>Let’s build a query to do so using SQL.</p>
+<ul>
+<li>In the <strong>symbology</strong> dialog box, go to <strong>Advanced
+Symbol options</strong>, and open <strong>Data Exclusion</strong>.</li>
+</ul>
+<p><left><img src="figures/sql.png" width="180"></left></p>
+<ul>
+<li>Add an <strong>expression (+ New expression)</strong> and complete
+the <strong>Where</strong> clause that will exclude the District of
+Columbia.</li>
+</ul>
+<p>There are multiple ways to exclude DC, e.g., you can set
+<strong>“Where”</strong> to <strong>“STATENAME”</strong> and <strong>“is
+equal to”</strong> DC’s name.</p>
+<p><left><img src="figures/sql1.png" width="180"></left></p>
+<p>Or set <strong>“Where” = POP 10_SQMI, and “is equal to” the value of
+DC’s POP10 density</strong>, which is the highest in the drop-down menu,
+or set <strong>“Where” = POP 10_SQMI, and “is greater than”</strong>
+that of DC’s density. Try them all or develop your own SQL.</p>
+<p><left><img src="figures/sql2.png" width="180"></left></p>
+<p><left><img src="figures/sql3.png" width="180"></left></p>
+<p>Then click Apply and look at the resulting effect on your
+classification.</p>
+<p><left><img src="figures/excludedc.png" width="300"></left></p>
+<ul>
+<li>Note: we haven’t removed DC from the data set, we are just excluding
+it from the map layout. Look at the updated QQ plot or histogram, see
+how the new plot looks different (the outlier is gone)</li>
+</ul>
+<p>Now make a population density map layout using graduated colors by
+state exclude D.C.</p>
+<hr />
+</div>
+</div>
+<div id="now-its-your-turn" class="section level2">
+<h2>Now it’s your turn!!!</h2>
+<p>Here is your second assignment. (Total points 100 + 10)</p>
+<p>In the first part of assignment (90 points), just finish <strong>Map
+1 - 8</strong> and answer <strong>Question 1-2</strong> follow our lab
+instructions. These maps are 10 points each, and questions are 5 points
+each.</p>
+<p>For the second part of the assignment:</p>
+<ol style="list-style-type: decimal">
+<li><p>Map 9 (10 points): create a multiple attributes map layouts of
+New York State counties displaying the % of housing units which are
+renter occupied (RENTER_OCC) (normalized to the total number of housing
+units: HSE _UNITS) and the % population that has never been married,
+using “NMARRY00” (already normalized). Write a short answer to the
+following questions: Justify your choice of classification scheme (why
+you use this scheme); Discuss any spatial patterns you may notice. Is
+there a spatial relationship between these two variables?</p></li>
+<li><p>Map 10 (Bonus 10 points): Create a Multivariate map layouts
+depicting number of electoral votes (EV_2012) and winning party
+(Party_2012) by state for the continental US for 2012 election.</p></li>
+</ol>
+<p>Hint: electoral votes (continuous variable) should be displayed using
+graduated symbols. And you can use color to classify winning party since
+it is nominal/categorical data.</p>
+<p><br> <br></p>
+<p><strong>The END</strong></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
